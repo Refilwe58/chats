@@ -1,0 +1,74 @@
+<div class="header">
+    <h1>{{headerTitle}}</h1>
+    <div class="header-description">
+      <p>{{headerDescription}}</p>
+    </div>
+    </div>
+    
+    <div class="banner">
+      <h5>want to share vacanccies? see how ></h5>
+    </div>
+     <div class="sections">
+      <div class="left-section">
+        <div class="heading">
+          <ul>
+            <li>
+              <a tabindex="1" routerLink="/career"><h4>On Campus Vaccancies</h4></a>
+              <hr>
+            </li>
+            <li>
+              <a tabindex="1" routerLink="/career"><h4>Res Vacanccies</h4>
+              </a>
+              <hr>
+            </li>
+            <li>
+              <a tabindex="1" routerLink="/career"><h4>Career walk-through</h4></a>
+    
+              <hr>
+            </li>
+          </ul>
+         </div>
+         <div class="bottom-left-info">
+         <a href=""><h3>Find more on News and Events...</h3></a>
+         <ul>
+          <li>
+            <a tabindex="1" routerLink="/career"><h4># NewsFeed Page</h4></a>
+          </li>
+          <li>
+            <a tabindex="1" routerLink="/career"><h4># Events Page</h4>
+            </a>
+          </li>
+          <li>
+            <a tabindex="1" routerLink="/career"><h4>TUT Posters</h4></a>
+          </li>
+          <li>
+            <a tabindex="1" routerLink="/career"><h4>Graduation Ceremonies</h4></a>
+          </li>
+          <li>
+            <a tabindex="1" routerLink="/career"><h4>TUT Webmail</h4></a>
+          </li>
+        </ul>
+      </div>
+      </div>
+      <div class="row-md-6">
+      <div class="right-section">
+        <div class="heading">
+          <div *ngFor="let vaccan of posts">
+          <h1> {{vaccan.vac_title}}</h1>
+         
+         <div class="post-data">
+          <img src="assets/image/b.jpg" alt="">
+          <div class="post-details">
+            <p>Posted: Tuesday, 14 September 2022</p>
+            <p>{{vaccan.vac_location}} </p>
+          </div>
+          <p>{{vaccan.vac_position}}</p>
+            <button>Apply</button>
+          </div>
+          </div>
+           
+    </div>
+    </div>
+    </div>
+  </div>
+ 

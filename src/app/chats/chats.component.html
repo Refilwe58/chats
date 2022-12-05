@@ -1,0 +1,95 @@
+
+<html>
+    <head>
+
+
+    </head>
+    <body>
+    <div class="container">
+    <h3 class=" text-center">Chats</h3>
+    <div class="messaging" *ngFor="let item of  viewUsers;let i =index">
+          <div class="inbox_msg">
+            <div class="inbox_people">
+              <div class="headind_srch">
+                <div class="recent_heading">
+                  <h4>Recent</h4>
+                </div>
+                <div class="srch_bar">
+                  <div class="stylish-input-group">
+                    <input type="text" class="search-bar"  placeholder="Search" >
+                    <span class="input-group-addon">
+                    <button type="button"> <i class="fa fa-search" aria-hidden="true"></i> </button>
+                    </span> </div>
+                </div>
+              </div>
+
+              <div class="inbox_chat" >
+
+                <div class="chat_list">
+                  <div class="chat_people">
+                    <div class="chat_img">  </div>
+                    <div class="chat_ib">
+
+                     <button class="secondary" (click)="getId(item.alumni_id)" (click)="getMessages()" id="id_{{i}}" value="{{item.alumni_id}}">
+                       <a routerLink="/chats/{{item.alumni_id}}" >
+                        <h5 >
+                           {{item.alumni_id}} {{item.alumni_name}} {{item.alumni_surname}}
+
+                        </h5>
+                      </a>
+                    </button>
+
+                    </div>
+                  </div>
+                </div>
+
+
+
+              </div>
+
+            </div>
+            <div class="mesgs" >
+              <div class="msg_history"*ngFor="let chats of  messages;let i =index">
+                <div class="incoming_msg">
+                  <div class="incoming_msg_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
+                  <div class="received_msg">
+                    <div class="received_withd_msg">
+                      <p>{{chats.message}}</p>
+                      <span class="time_date">{{chats.chat_date}}</span></div>
+                  </div>
+                </div>
+                <div class="outgoing_msg">
+                  <div class="sent_msg">
+                    <p>{{chats.message}}</p>
+                    <span class="time_date"> {{chats.chat_date}}</span> </div>
+                </div>
+
+              </div>
+
+              <div class="type_msg">
+                <form [formGroup]="convo" (ngSubmit)="sendMessage()">
+                <div class="input_msg_write">
+                  <input type="text" class="form-control" placeholder="Type a message" formControlName="message" >
+                  <button class="msg_send_btn" type="submit" >
+                    <a routerLink="/chats/{{item.alumni_id}}" >
+                      <i class="fa fa-paper-plane-o" aria-hidden="true">
+                         </i>
+                      </a>
+                    </button>
+                </div>
+              </form>
+              </div>
+
+            </div>
+          </div>
+
+
+
+
+        </div></div>
+        </body>
+        <app-footer></app-footer>
+        </html>
+
+
+
